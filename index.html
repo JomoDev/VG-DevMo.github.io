@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>HTML</title>
+    <script type="text/javascript" src="JQuery.js"></script>
+    <script type="text/javascript">
+      var score = 0;
+      $(document).ready(function () {
+        document.getElementsByTagName('p')[0].innerHTML = "Score:" + score.toString();
+        var x = $(document).width() - 25;
+        var y = $(document).height() - 25;
+
+        $("#field").animate({
+          "width": x,
+          "height": y
+        }, "slow");
+
+        $("#point").mouseover(function () {
+          $(this).animate({
+            "margin-left": "-=1px",
+            "margin-top": "-=1px",
+            "width": "12px",
+            "height": "12px"
+          }, "fast");
+        });
+
+        $("#point").click(function () {
+          $(this).animate({
+            "background-color": "white"
+          }, 1);
+          $("#scoreboard").animate({
+            "width": "160px",
+            "height": "50px",
+            "font-size": "35px"
+          }, 100);
+          $("#scoreboard").animate({
+            "width": "150px",
+            "height": "40px",
+            "font-size": "30px"
+          }, 100);
+
+          score++;
+
+          document.getElementsByTagName('p')[0].innerHTML = "Score:" + score.toString();
+          console.log("Search new Position");
+          var newY = Math.floor(Math.random() * $("body").height() - 20);
+          var newX = Math.floor(Math.random() * $("body").width() - 20);
+          newY += "px";
+          newX += "px";
+
+          $(this).animate({
+            "width": "10px",
+            "height": "10px",
+            "margin-top": newY,
+            "margin-left": newX,
+            "background-color": "#49e553"
+          }, "fast");
+          console.log("New position: X: " + newX + " Y: " + newY);
+        });
+
+        $(window).resize(function () {
+          location.reload();
+        });
+
+      });
+    </script>
+    <style type="text/css">
+
+      body {
+        background-color: #f45c42;
+      }
+      p#scoreboard {
+        width: 150px;
+        height: 40px;
+        background-color: #ed5b42;
+        border-radius: 2px;
+        border-color: #d8533c;
+        border-style: solid;
+        margin-left: 5px;
+        margin-top: 5px;
+        font-family: monospace;
+        font-size: 30px;
+        color: white;
+      }
+      div#field {
+        width: 160px;
+        height: 50px;
+        background-color: #efefef;
+        border-color: #e2e2e2;
+        border-style: solid;
+        border-radius: 2px;
+      }
+      div#point {
+        background-color: #ed5b42;
+        border-radius: 10px;
+        border-color: #d8533c;
+        border-style: solid;
+        margin-left: 75px;
+        margin-right: 75px;
+        width: 10px;
+        height: 10px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="field">
+      <p id="scoreboard"></p>
+      <div id="point"></div>
+    </div>
+  </body>
+
+</html>
