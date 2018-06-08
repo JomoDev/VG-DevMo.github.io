@@ -8,7 +8,6 @@
     canvas#gamecanvas {
       margin: 0px;
     }
-    
 
     body {
       margin: 0px;
@@ -16,7 +15,7 @@
     }
   </style>
   <script type="text/javascript">
-    var r = 0,
+    var r = 255,
       g = 0,
       b = 0,
       a = 255;
@@ -51,20 +50,86 @@
         imgData.data[4 * (y * imgData.width + x) + 1] = g; // Grün
         imgData.data[4 * (y * imgData.width + x) + 2] = b; // Blau
         imgData.data[4 * (y * imgData.width + x) + 3] = a; // Alpha
+        //Testweise größeren Cursors
+        y--;
+        x--;
+        imgData.data[4 * (y * imgData.width + x)] = r; // Rot
+        imgData.data[4 * (y * imgData.width + x) + 1] = g; // Grün
+        imgData.data[4 * (y * imgData.width + x) + 2] = b; // Blau
+        imgData.data[4 * (y * imgData.width + x) + 3] = a; // Alpha
+        x++;
+        imgData.data[4 * (y * imgData.width + x)] = r; // Rot
+        imgData.data[4 * (y * imgData.width + x) + 1] = g; // Grün
+        imgData.data[4 * (y * imgData.width + x) + 2] = b; // Blau
+        imgData.data[4 * (y * imgData.width + x) + 3] = a; // Alpha
+        x++;
+        imgData.data[4 * (y * imgData.width + x)] = r; // Rot
+        imgData.data[4 * (y * imgData.width + x) + 1] = g; // Grün
+        imgData.data[4 * (y * imgData.width + x) + 2] = b; // Blau
+        imgData.data[4 * (y * imgData.width + x) + 3] = a; // Alpha
+        x -= 2;
+        y--;
+        imgData.data[4 * (y * imgData.width + x)] = r; // Rot
+        imgData.data[4 * (y * imgData.width + x) + 1] = g; // Grün
+        imgData.data[4 * (y * imgData.width + x) + 2] = b; // Blau
+        imgData.data[4 * (y * imgData.width + x) + 3] = a; // Alpha
+        x++;
+        imgData.data[4 * (y * imgData.width + x)] = r; // Rot
+        imgData.data[4 * (y * imgData.width + x) + 1] = g; // Grün
+        imgData.data[4 * (y * imgData.width + x) + 2] = b; // Blau
+        imgData.data[4 * (y * imgData.width + x) + 3] = a; // Alpha
+        x++;
+        imgData.data[4 * (y * imgData.width + x)] = r; // Rot
+        imgData.data[4 * (y * imgData.width + x) + 1] = g; // Grün
+        imgData.data[4 * (y * imgData.width + x) + 2] = b; // Blau
+        imgData.data[4 * (y * imgData.width + x) + 3] = a; // Alpha
+        y += 2;
+        imgData.data[4 * (y * imgData.width + x)] = r; // Rot
+        imgData.data[4 * (y * imgData.width + x) + 1] = g; // Grün
+        imgData.data[4 * (y * imgData.width + x) + 2] = b; // Blau
+        imgData.data[4 * (y * imgData.width + x) + 3] = a; // Alpha
+        x -= 2;
+        imgData.data[4 * (y * imgData.width + x)] = r; // Rot
+        imgData.data[4 * (y * imgData.width + x) + 1] = g; // Grün
+        imgData.data[4 * (y * imgData.width + x) + 2] = b; // Blau
+        imgData.data[4 * (y * imgData.width + x) + 3] = a; // Alpha
+        // Ende des tests
         context.putImageData(imgData, 0, 0);
       }
 
       function focusLost() {
         mouseIsDown = false;
       }
+
+      function switchColor() {
+        var colorpicker = document.getElementById("colorpicker");
+        var hexColor = colorpicker.value;
+        console.log("New color:" + hexColor);
+      }
+
     }
   </script>
 </head>
 
 <body>
+  <div id="users">
+    <!--Userpanel field-->
+  </div>
+
+  <div id="chat">
+    <!--User chat-->
+  </div>
+
   <div>
+    <!--Gamecanvas for drawing-->
     <canvas id="gamecanvas"></canvas>
   </div>
+
+  <div>
+    <!--Color picker-->
+    <input type="color" id="colorpicker" value="#ff0000" onclick="switchColor()">
+  </div>
+
 </body>
 
 </html>
