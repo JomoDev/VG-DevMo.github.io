@@ -3,6 +3,8 @@
 
 <head>
   <meta charset="UTF-8" />
+  <script language="javascript" type="text/javascript" src="jquery-3.3.1.js"></script>
+  <script language="javascript" type="text/javascript" src="script.js"></script>
   <title>Painter demo</title>
   <style type="text/css">
     canvas#gamecanvas {
@@ -22,15 +24,13 @@
     var mouseIsDown = false;
     var x = 0,
       y = 0;
-
     window.onload = function() {
       var element = document.getElementById('gamecanvas');
       // unnötiges setzen des Cursors -> kann man auch weglassen, is aber cool
-      element.style.cursor = "crosshair";
-
+      element.style.cursor = "pointer";
       var context = element.getContext('2d'),
         imgData;
-      context.fillStyle = 'lightgray';
+      context.fillStyle = '#f7f7f7';
       context.fillRect(0, 0, element.width, element.height);
       imgData = context.getImageData(0, 0, element.width, element.height);
       element.onmousemove = function(e) {
@@ -41,9 +41,16 @@
         }
       }
 
-      element.onclick = function(e) {
-        mouseIsDown = !mouseIsDown;
-      }
+      $("#gamecanvas").mousedown(function() {
+        mouseIsDown = true;
+        if (mouseIsDown) {
+          getColor();
+        }
+      });
+
+      $("#gamecanvas").mouseup(function() {
+        mouseIsDown = false;
+      });
 
       function createImage() {
         imgData.data[4 * (y * imgData.width + x)] = r; // Rot
@@ -101,12 +108,38 @@
         mouseIsDown = false;
       }
 
-      function switchColor() {
-        var colorpicker = document.getElementById("colorpicker");
-        var hexColor = colorpicker.value;
-        console.log("New color:" + hexColor);
-      }
+    }
 
+    function switchColor() {
+      var colorpicker = document.getElementById("colorpicker");
+      var hexColor = colorpicker.value;
+      return hexColor;
+    }
+
+    function getColor() {
+
+      var hexColor = switchColor();
+
+      r = hexToR(hexColor);
+      g = hexToG(hexColor);
+      b = hexToB(hexColor);
+
+    }
+
+    function hexToR(h) {
+      return parseInt((cutHex(h)).substring(0, 2), 16)
+    }
+
+    function hexToG(h) {
+      return parseInt((cutHex(h)).substring(2, 4), 16)
+    }
+
+    function hexToB(h) {
+      return parseInt((cutHex(h)).substring(4, 6), 16)
+    }
+
+    function cutHex(h) {
+      return (h.charAt(0) == "#") ? h.substring(1, 7) : h
     }
   </script>
 </head>
