@@ -1,0 +1,18 @@
+canvas#gamecanvas {
+  margin: 0px;
+}
+
+body {
+  margin: 0px;
+  background-color: lightblue;
+}
+
+input#colopicker {
+  width: 35px;
+  height: 35px;
+  background-color: lightblue;
+}
+
+input#pencilsize {
+  background-color: lightblue;
+}
