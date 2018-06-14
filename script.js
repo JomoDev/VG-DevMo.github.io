@@ -36,8 +36,8 @@ window.onload = function() {
   });
 
   function createImage() {
-  //  x-=(pencilSize/2);
-//    y-=(pencilSize/2);
+    x-=Math.round(pencilSize/2);
+    y-=Math.round(pencilSize/2);
 
     for (var ix=0;ix<pencilSize;ix++) {
       for (var iy=0;iy<pencilSize;iy++) {
