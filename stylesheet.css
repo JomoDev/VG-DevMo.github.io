@@ -4,15 +4,15 @@ canvas#gamecanvas {
 
 body {
   margin: 0px;
-  background-color: lightblue;
+  background-color: lightgray;
 }
 
 input#colopicker {
   width: 35px;
   height: 35px;
-  background-color: lightblue;
+  background-color: lightgray;
 }
 
 input#pencilsize {
-  background-color: lightblue;
+  background-color: lightgray;
 }
