@@ -1,3 +1,5 @@
+console.log("         ____   ____  ________\n         \\   \\ /   / /   _____/\n  ______  \\   Y   / /   \\  ___   ______\n /_____/   \\     /  \\    \\_\\  \\ /_____/\n            \\___/    \\______  /\n                            \\/          \n www.veteran-gaming.at")
+
 var r = 255,
   g = 0,
   b = 0,
@@ -95,4 +97,9 @@ function getPencilSize () {
 function createPencilArray () {
   var PencilArray = [pencilSize][pencilSize];
   return PencilArray;
+}
+
+
+function paintBucket() {
+
 }
