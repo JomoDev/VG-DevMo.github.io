@@ -1,5 +1,7 @@
 console.log("         ____   ____  ________\n         \\   \\ /   / /   _____/\n  ______  \\   Y   / /   \\  ___   ______\n /_____/   \\     /  \\    \\_\\  \\ /_____/\n            \\___/    \\______  /\n                            \\/          \n www.veteran-gaming.at")
 
+var actualPencilType = 1;
+
 var r = 255,
   g = 0,
   b = 0,
@@ -9,6 +11,9 @@ var pencilSize = 1;
 var x = 0,
   y = 0;
 window.onload = function() {
+  $("#word").text("g _ _ i _ g");
+  activatePencil();
+  $("#body").animate({opacity: 1}, "slow");
   var element = document.getElementById('gamecanvas');
   // unnötiges setzen des Cursors -> kann man auch weglassen, is aber cool
   element.style.cursor = "pointer";
@@ -24,7 +29,15 @@ window.onload = function() {
       createImage();
     }
   }
+/*
+  $("#gamecanvas").onclick(function () {
+    if(actualPencilType === 2) {
+      x = e.pageX || event.clientX + document.body.scrollLeft;
+      y = e.pageY || event.clientY + document.body.scrollTop;
 
+    }
+  });
+*/
   $("#gamecanvas").mousedown(function() {
     mouseIsDown = true;
     if (mouseIsDown) {
@@ -39,10 +52,12 @@ window.onload = function() {
 
   function createImage() {
     x-=parseInt($("#gamecanvas").css("margin-left"));
-    y-=parseInt($("#gamecanvas").css("margin-top"))
+    y-=parseInt($("#gamecanvas").css("margin-top"));
+    y-=parseInt($("#header").css("height"));
+    y-=parseInt($("#header").css("margin-top"));
     x-=Math.round(pencilSize/2);
-    y-=Math.round(pencilSize/2);
-
+    //y-=Math.round(pencilSize/2);
+    y-=pencilSize;
     for (var ix=0;ix<pencilSize;ix++) {
       for (var iy=0;iy<pencilSize;iy++) {
         y++;
@@ -102,4 +117,16 @@ function createPencilArray () {
 
 function paintBucket() {
 
+}
+
+function activatePencil () {
+  actualPencilType = 1;
+  $("#btnPencil").animate({ "height": "27px" , "width": "27px" }, "fast");
+  $("#btnPipette").animate({ "height": "25px" , "width": "25px" }, "fast");
+}
+
+function activatePipette () {
+  actualPencilType = 2;
+  $("#btnPencil").animate({ "height": "25px" , "width": "25px" }, "fast");
+  $("#btnPipette").animate({ "height": "27px" , "width": "27px" }, "fast");
 }

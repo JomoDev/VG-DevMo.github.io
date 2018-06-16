@@ -4,23 +4,20 @@
 <head>
   <meta charset="UTF-8" />
   <!--einbinden von externen Dateien-->
+  <link rel="icon" type="image/png" href="src/icons/pencil.png">
   <script language="javascript" type="text/javascript" src="src/jquery-3.3.1.js"></script>
   <script language="javascript" type="text/javascript" src="script.js"></script>
   <script language="javascript" type="text/javascript" src="src/Classes.js"></script>
   <script language="javascript" type="text/javascript" src="src/Functions.js"></script>
   <script language="javascript" type="text/javascript" src="src/Programm.js"></script>
   <link rel="stylesheet" href="stylesheet.css">
-  <title>Painter demo</title>
+  <title>Paint</title>
 </head>
 
-<body>
+<body id="body">
 
-  <div id="users">
-    <!--Userpanel field-->
-  </div>
-
-  <div id="chat">
-    <!--User chat-->
+  <div id="header">
+    <label id="word"></label>
   </div>
 
   <div>
@@ -34,12 +31,17 @@
     <!--Pinselgröße-->
     <input id="pencilsize" type="number" min="1" max="35" value="10">
 
-    <button><img src="src/icons/pencil.png"/></button>
+    <button id="btnPencil" onclick="activatePencil()"><img src="src/icons/pencil.png"/></button>
     <button><img src="src/icons/paint_bucket.png"/></button>
     <button><img src="src/icons/eraser.png"/></button>
-    <button><img src="src/icons/pipette.png"/></button>
+    <button id="btnPipette" onclick="activatePipette()"><img src=" src/icons/pipette.png "/></button>
+  </div>
+
+  <div id="chat">
+    <!--User chat-->
 
   </div>
+
 
 </body>
 
