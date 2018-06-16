@@ -36,6 +36,8 @@ window.onload = function() {
   });
 
   function createImage() {
+    x-=parseInt($("#gamecanvas").css("margin-left"));
+    y-=parseInt($("#gamecanvas").css("margin-top"))
     x-=Math.round(pencilSize/2);
     y-=Math.round(pencilSize/2);
 
