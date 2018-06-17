@@ -11,6 +11,7 @@ var pencilSize = 1;
 var x = 0,
   y = 0;
 window.onload = function() {
+  detectDevice();
   $("#word").text("g _ _ i _ g");
   activatePencil();
   $("#body").animate({opacity: 1}, "slow");
@@ -130,3 +131,34 @@ function activatePipette () {
   $("#btnPencil").animate({ "height": "25px" , "width": "25px" }, "fast");
   $("#btnPipette").animate({ "height": "27px" , "width": "27px" }, "fast");
 }
+
+var isMobile = {
+    Android: function () {
+        return navigator.userAgent.match(/Android/i);
+    },
+    BlackBerry: function () {
+        return navigator.userAgent.match(/BlackBerry/i);
+    },
+    iOS: function () {
+        return navigator.userAgent.match(/iPhone|iPod|iPad/i);
+    },
+    Opera: function () {
+        return navigator.userAgent.match(/Opera Mini/i);
+    },
+    Windows: function () {
+        return navigator.userAgent.match(/IEMobile/i);
+    },
+    any: function () {
+        return ((isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows()));
+    }
+};
+
+function detectDevice() {
+    var result = 'No mobile device';
+    if (isMobile.any()) {
+      $("#body").animate({opacity: 0}, "slow");
+        result = 'This Website is not available on mobile devices';
+        alert(result);
+    }
+
+};
