@@ -11,10 +11,10 @@ var pencilSize = 1;
 var x = 0,
   y = 0;
 window.onload = function() {
-  detectDevice();
   $("#word").text("g _ _ i _ g");
   activatePencil();
   $("#body").animate({opacity: 1}, "slow");
+  detectDevice();
   var element = document.getElementById('gamecanvas');
   // unnötiges setzen des Cursors -> kann man auch weglassen, is aber cool
   element.style.cursor = "pointer";
