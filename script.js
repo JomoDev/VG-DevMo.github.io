@@ -156,7 +156,7 @@ var isMobile = {
 function detectDevice() {
     var result = 'No mobile device';
     if (isMobile.any()) {
-      $("#body").animate({opacity: 0}, "slow");
+      $("#body").animate({opacity: 0}, 1);
         result = 'Upps! Sorry but this Website is not available on mobile devices :(';
         alert(result);
     }
