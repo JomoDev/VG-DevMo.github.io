@@ -11,6 +11,12 @@ var pencilSize = 1;
 var x = 0,
   y = 0;
 window.onload = function() {
+
+  function draw(e) {
+    x = e.pageX || event.clientX + document.body.scrollLeft;
+    y = e.pageY || event.clientY + document.body.scrollTop;
+    createImage();
+  }
   $("#word").text("g _ _ i _ g");
   activatePencil();
   $("#body").animate({opacity: 1}, "slow");
@@ -25,21 +31,12 @@ window.onload = function() {
   imgData = context.getImageData(0, 0, element.width, element.height);
   element.onmousemove = function(e) {
     if (mouseIsDown) {
-      x = e.pageX || event.clientX + document.body.scrollLeft;
-      y = e.pageY || event.clientY + document.body.scrollTop;
-      createImage();
+      draw(e);
     }
   }
-/*
-  $("#gamecanvas").onclick(function () {
-    if(actualPencilType === 2) {
-      x = e.pageX || event.clientX + document.body.scrollLeft;
-      y = e.pageY || event.clientY + document.body.scrollTop;
 
-    }
-  });
-*/
-  $("#gamecanvas").mousedown(function() {
+  $("#gamecanvas").mousedown(function(e) {
+    draw(e);
     mouseIsDown = true;
     if (mouseIsDown) {
       getColor();
@@ -123,12 +120,32 @@ function activatePencil () {
   actualPencilType = 1;
   $("#btnPencil").animate({ "height": "27px" , "width": "27px" }, "fast");
   $("#btnPipette").animate({ "height": "25px" , "width": "25px" }, "fast");
+  $("#btnPaintBucket").animate({ "height": "25px" , "width": "25px" }, "fast");
+  $("#btnEraser").animate({ "height": "25px" , "width": "25px" }, "fast");
 }
 
 function activatePipette () {
   actualPencilType = 2;
-  $("#btnPencil").animate({ "height": "25px" , "width": "25px" }, "fast");
   $("#btnPipette").animate({ "height": "27px" , "width": "27px" }, "fast");
+  $("#btnPencil").animate({ "height": "25px" , "width": "25px" }, "fast");
+  $("#btnPaintBucket").animate({ "height": "25px" , "width": "25px" }, "fast");
+  $("#btnEraser").animate({ "height": "25px" , "width": "25px" }, "fast");
+}
+
+function activatePaintBucket () {
+  actualPencilType = 3;
+  $("#btnPaintBucket").animate({ "height": "27px" , "width": "27px" }, "fast");
+  $("#btnPencil").animate({ "height": "25px" , "width": "25px" }, "fast");
+  $("#btnPipette").animate({ "height": "25px" , "width": "25px" }, "fast");
+  $("#btnEraser").animate({ "height": "25px" , "width": "25px" }, "fast");
+}
+
+function activateEraser ()  {
+  actualPencilType = 4;
+  $("#btnEraser").animate({ "height": "27px" , "width": "27px" }, "fast");
+  $("#btnPencil").animate({ "height": "25px" , "width": "25px" }, "fast");
+  $("#btnPipette").animate({ "height": "25px" , "width": "25px" }, "fast");
+  $("#btnPaintBucket").animate({ "height": "25px" , "width": "25px" }, "fast");
 }
 
 var isMobile = {
@@ -157,5 +174,4 @@ function detectDevice() {
       $("#body").animate({opacity: 0}, 1);
         alert('Upps! Sorry but this Website is not available on mobile devices :(');
     }
-
 };

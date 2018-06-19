@@ -1,3 +1,9 @@
+:root {
+  --color1: gray;
+  --color2: darkgray;
+  --fontcolor1: white;
+}
+
 canvas#gamecanvas {
   margin: 0px;
   margin-left: auto;
@@ -28,7 +34,7 @@ input#colorpicker {
   border: 1px;
   border-style: solid;
   border-color: black;
-  background-image: linear-gradient(lightgray, gray);
+  background-image: linear-gradient(var(--color1), var(--color2));
 }
 
 img {
@@ -38,7 +44,7 @@ img {
 }
 
 button {
-  background-image: linear-gradient(lightgray, gray);
+  background-image: linear-gradient(var(--color1), var(--color2));
   background-color: lightgray;
   width: 25px;
   height: 25px;
@@ -52,10 +58,11 @@ button {
 
 input#pencilsize {
   background-color: lightgray;
-  background-image: linear-gradient(lightgray, gray);
+  background-image: linear-gradient(var(--color1), var(--color2));
   width: 30px;
-  height: 18px;
-  margin: 0px;
+  height: 25px;
+  /*margin: 0px;*/
+  margin-top: -30px;
   padding: 0px;
   border-radius: 2px;
   border: 1px;
@@ -64,7 +71,7 @@ input#pencilsize {
 }
 
 div#header {
-  background-image: linear-gradient(gray, lightgray);
+  background-image: linear-gradient(var(--color1), var(--color2));
   padding: 0px;
   margin-top: 10px;
   width: 300px;
@@ -85,7 +92,7 @@ div#header {
 }
 
 div#modules{
-  background-image: linear-gradient(lightgray, gray);
+  background-image: linear-gradient(var(--color1), var(--color2));
   padding: 0px;
   width: 300px;
   height: 30px;
