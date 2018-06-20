@@ -27,14 +27,25 @@
 
   <div id="modules">
     <!--Color picker-->
-    <input id="colorpicker" type="color" value="#0061ff">
+    <input id="colorpicker" type="color" value="#000000">
     <!--Pinselgröße-->
-    <input id="pencilsize" type="number" min="1" max="35" value="10">
+    <button id="pencilSizeChooser" onclick="pencilSizeChooser()"><label id="pencilSize">5px</label></button>
     <!--Steuerungs buttons-->
     <button id="btnPencil" onclick="activatePencil()"><img src="src/icons/pencil.png"/></button>
     <button id="btnPaintBucket" onclick="activatePaintBucket()"><img src="src/icons/paint_bucket.png"/></button>
     <button id="btnEraser" onclick="activateEraser()"><img src="src/icons/eraser.png"/></button>
     <button id="btnPipette" onclick="activatePipette()"><img src=" src/icons/pipette.png "/></button>
+  </div>
+
+  <div id="pencilsizePopup">
+    <button name="pencilSizeButton" id="5px" onclick="px5()">5px</button>
+    <button name="pencilSizeButton" id="10px" onclick="px10()">10px</button>
+    <button name="pencilSizeButton" id="15px" onclick="px15()">15px</button>
+    <button name="pencilSizeButton" id="20px" onclick="px20()">20px</button>
+    <button name="pencilSizeButton" id="25px" onclick="px25()">25px</button>
+    <button name="pencilSizeButton" id="30px" onclick="px30()">30px</button>
+    <button name="pencilSizeButton" id="35px" onclick="px35()">35px</button>
+    <button name="pencilSizeButton" id="40px" onclick="px35()">40px</button>
   </div>
 
   <div id="chat">

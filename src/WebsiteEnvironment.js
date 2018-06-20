@@ -1,7 +1,7 @@
 console.log("         ____   ____  ________\n         \\   \\ /   / /   _____/\n  ______  \\   Y   / /   \\  ___   ______\n /_____/   \\     /  \\    \\_\\  \\ /_____/\n            \\___/    \\______  /\n                            \\/          \n www.veteran-gaming.at\n\n made by GameMind | Jonas");
 
 var actualPencilType = 1;
-
+var pencilSizeValue = 5;
 var r = 255,
   g = 0,
   b = 0,
@@ -10,14 +10,22 @@ var mouseIsDown = false;
 var pencilSize = 1;
 var x = 0,
   y = 0;
+
+var pencilChooserPopupOpen = false;
+
 window.onload = function() {
+
+  $(window).resize(function () {
+    pencilChooserPopupOpen = false;
+    $("#pencilsizePopup").animate({"opacity": "0", "margin-left": "0"}, "fast");
+  });
 
   function draw(e) {
     x = e.pageX || event.clientX + document.body.scrollLeft;
     y = e.pageY || event.clientY + document.body.scrollTop;
     createImage();
   }
-  $("#word").text("g _ _ i _ g");
+  $("#word").text("_ _ _ _ _ _");
   activatePencil();
   $("#body").animate({opacity: 1}, "slow");
   detectDevice();
@@ -36,17 +44,18 @@ window.onload = function() {
   }
 
   $("#gamecanvas").mousedown(function(e) {
-    draw(e);
     mouseIsDown = true;
     if (mouseIsDown) {
       getColor();
       getPencilSize();
     }
+    draw(e);
   });
 
   $("#gamecanvas").mouseup(function() {
     mouseIsDown = false;
   });
+
 
   function createImage() {
     x-=parseInt($("#gamecanvas").css("margin-left"));
@@ -74,7 +83,6 @@ window.onload = function() {
   function focusLost() {
     mouseIsDown = false;
   }
-
 }
 
 function getColorFromColorPicker() {
@@ -104,7 +112,8 @@ function cutHex(h) {
 }
 
 function getPencilSize () {
-  pencilSize = document.getElementById("pencilsize").value;
+  pencilSize = pencilSizeValue;
+  //pencilSize = document.getElementById("pencilsize").value;
 }
 
 function createPencilArray () {
@@ -175,3 +184,60 @@ function detectDevice() {
         alert('Upps! Sorry but this Website is not available on mobile devices :(');
     }
 };
+
+function pencilSizeChooser() {
+  if(!pencilChooserPopupOpen) {
+    var leftMargin = parseInt($("#gamecanvas").css("margin-left")) + 40;
+    $("#pencilsizePopup").animate({"opacity": "1", "margin-left": leftMargin}, "fast");
+  } else {
+    $("#pencilsizePopup").animate({"opacity": "0", "margin-left": "0"}, "fast");
+  }
+  pencilChooserPopupOpen = !pencilChooserPopupOpen;
+}
+
+function px5()  {
+  pencilSizeValue = 5;
+  pixelLog();
+};
+
+function px10()  {
+  pencilSizeValue = 10;
+  pixelLog();
+};
+
+function px15() {
+  pencilSizeValue = 15;
+  pixelLog();
+};
+
+function px20()  {
+  pencilSizeValue = 20;
+  pixelLog();
+};
+
+function px25()  {
+  pencilSizeValue = 25;
+  pixelLog();
+};
+
+function px30()  {
+  pencilSizeValue = 30;
+  pixelLog();
+};
+
+function px35()  {
+  pencilSizeValue = 35;
+  pixelLog();
+};
+
+function px40()  {
+  pencilSizeValue = 40;
+  pixelLog();
+};
+
+function pixelLog () {
+  //console.log("Pencilsize:" + pencilSizeValue);
+  pencilChooserPopupOpen = false;
+  $("#pencilSize").text(pencilSizeValue + "px");
+  $("#pencilsizePopup").animate({"opacity": "0", "margin-left": "0"}, "fast");
+}

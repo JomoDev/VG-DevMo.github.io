@@ -1,6 +1,8 @@
 :root {
-  --color1: gray;
-  --color2: darkgray;
+  --color1: #d9d9d9;
+  --color2: #b3b3b3;
+  --buttoncolor1: #FFB700;
+  --buttoncolor2: #FF7600;
   --fontcolor1: white;
 }
 
@@ -18,7 +20,7 @@ canvas#gamecanvas {
 }
 
 body#body {
-  background-image: linear-gradient(#8e8e8e, #919191, #8e8e8e);
+  background-image: linear-gradient(#595959);
   margin: 0px;
   background-color: darkgray;
   opacity: 0;
@@ -34,7 +36,7 @@ input#colorpicker {
   border: 1px;
   border-style: solid;
   border-color: black;
-  background-image: linear-gradient(var(--color1), var(--color2));
+  background-image: linear-gradient(var(--buttoncolor1), var(--buttoncolor2));
 }
 
 img {
@@ -44,7 +46,7 @@ img {
 }
 
 button {
-  background-image: linear-gradient(var(--color1), var(--color2));
+  background-image: linear-gradient(var(--buttoncolor1), var(--buttoncolor2));
   background-color: lightgray;
   width: 25px;
   height: 25px;
@@ -57,17 +59,17 @@ button {
 }
 
 input#pencilsize {
+  background-image: linear-gradient(var(--buttoncolor1), var(--buttoncolor2));
   background-color: lightgray;
-  background-image: linear-gradient(var(--color1), var(--color2));
-  width: 30px;
+  width: 50px;
   height: 25px;
-  /*margin: 0px;*/
-  margin-top: -30px;
+  margin: 0px;
   padding: 0px;
   border-radius: 2px;
   border: 1px;
   border-style: solid;
   border-color: black;
+  font-size: 10px;
 }
 
 div#header {
@@ -92,6 +94,7 @@ div#header {
 }
 
 div#modules{
+  padding: 0px;
   background-image: linear-gradient(var(--color1), var(--color2));
   padding: 0px;
   width: 300px;
@@ -105,4 +108,31 @@ div#modules{
   border-color: black;
   border-top: 0px;
   padding-top: 3px;
+}
+
+div#pencilsizePopup {
+  margin-top: 1px;
+  opacity: 0;
+  width: 150px;
+  height: 56px;
+  border-radius: 2px;
+  border: 1px;
+  border-style: solid;
+  border-color: black;
+  background-image: linear-gradient(var(--color1), var(--color2));
+}
+
+label#pencilSize {
+
+}
+
+button#pencilSizeChooser {
+  width: 50px;
+  margin-top: -20px;
+}
+
+button[name="pencilSizeButton"] {
+  width: 32px;
+  margin-top: 2px;
+  margin-left: 2px;
 }
