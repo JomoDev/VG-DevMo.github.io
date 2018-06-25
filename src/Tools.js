@@ -1,14 +1,17 @@
-class CPencil {
+/*class CPencil {
 
-  use () {
-    console.log("Tool pencil used");
+  use (e) {
+    //console.log("Tool pencil used");
+    x = e.pageX || event.clientX + document.body.scrollLeft;
+    y = e.pageY || event.clientY + document.body.scrollTop;
+    createImage();
   }
 
 }
 
 class CEraser {
 
-  use () {
+  use (e) {
     console.log("Tool eraser used");
   }
 
@@ -16,7 +19,7 @@ class CEraser {
 
 class CPaintBucket {
 
-  use () {
+  use (e) {
     console.log("Tool paintbucket used");
   }
 
@@ -24,7 +27,7 @@ class CPaintBucket {
 
 class CPipette {
 
-  use () {
+  use (e) {
     console.log("Tool Pipette used");
   }
 
@@ -37,13 +40,14 @@ class CToolController {
   * eraser      TYPE CEraser()
   * paintbucket TYPE CPaintBucket()
   * pipette     TYPE CPipette()
-  ****************************************************/
-  constructor () {
+  ****************************************************//*
+  constructor (_color) {
     this.pencil = new CPencil();
     this.eraser = new CEraser();
     this.paintbucket = new CPaintBucket();
     this.pipette = new CPipette();
     this.activeTool = this.pencil;
+    this.color = _color;
   }
 
   setPencilActive (e) {
@@ -78,12 +82,16 @@ class CToolController {
     }
   }
 
-  useTool () {
+  determineColor () {
+    this.color = getColorFromColorPicker();
+  }
+
+  useTool (e) {
     if (this.activeTool instanceof CPencil
        || this.activeTool instanceof CEraser
        || this.activeTool instanceof CPaintBucket
        || this.activeTool instanceof CPipette) {
-      this.activeTool.use();
+      this.activeTool.use(e);
     } else {
       console.error("not defined tool has been tried to be used");
     }
@@ -120,3 +128,28 @@ function hexToB(h) {
 function cutHex(h) {
   return (h.charAt(0) == "#") ? h.substring(1, 7) : h
 }
+
+function createImage() {
+  x-=parseInt($("#gamecanvas").css("margin-left"));
+  y-=parseInt($("#gamecanvas").css("margin-top"));
+  y-=parseInt($("#header").css("height"));
+  y-=parseInt($("#header").css("margin-top"));
+  x-=Math.round(pencilSize/2);
+  //y-=Math.round(pencilSize/2);
+  y-=pencilSize;
+  for (var ix=0;ix<pencilSize;ix++) {
+    for (var iy=0;iy<pencilSize;iy++) {
+      y++;
+      imgData.data[4 * (y * imgData.width + x)] = r; // Rot
+      imgData.data[4 * (y * imgData.width + x) + 1] = g; // Grün
+      imgData.data[4 * (y * imgData.width + x) + 2] = b; // Blau
+      imgData.data[4 * (y * imgData.width + x) + 3] = a; // Alpha
+    }
+    y-=pencilSize;
+    x++;
+  }
+
+  context.putImageData(imgData, 0, 0);
+}
+
+*/
