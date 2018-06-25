@@ -1,5 +1,7 @@
 console.log("         ____   ____  ________\n         \\   \\ /   / /   _____/\n  ______  \\   Y   / /   \\  ___   ______\n /_____/   \\     /  \\    \\_\\  \\ /_____/\n            \\___/    \\______  /\n                            \\/          \n www.veteran-gaming.at\n\n made by GameMind | Jonas");
 
+var toolController = new CToolController();
+
 var actualPencilType = 1;
 var pencilSizeValue = 5;
 var r = 255,
@@ -20,11 +22,26 @@ window.onload = function() {
     $("#pencilsizePopup").animate({"opacity": "0", "margin-left": "0"}, "fast");
   });
 
+  var iScrollPos = 0;
+  $(window).scroll(function() {
+    console.log("Scroll");
+    var iCurScrollPos = $(this).scrollTop();
+    if (iCurScrollPos > iScrollPos) {
+      //Scrolling Down
+      console.log("Scroll down");
+    } else {
+      //Scrolling Up
+      console.log("Scroll up");
+    }
+    iScrollPos = iCurScrollPos;
+  });
+
   function draw(e) {
     x = e.pageX || event.clientX + document.body.scrollLeft;
     y = e.pageY || event.clientY + document.body.scrollTop;
     createImage();
   }
+
   $("#word").text("_ _ _ _ _ _");
   activatePencil();
   $("#body").animate({opacity: 1}, "slow");
@@ -39,11 +56,13 @@ window.onload = function() {
   imgData = context.getImageData(0, 0, element.width, element.height);
   element.onmousemove = function(e) {
     if (mouseIsDown) {
+      toolController.useTool();
       draw(e);
     }
   }
 
   $("#gamecanvas").mousedown(function(e) {
+    toolController.useTool();
     mouseIsDown = true;
     if (mouseIsDown) {
       getColor();
@@ -85,35 +104,8 @@ window.onload = function() {
   }
 }
 
-function getColorFromColorPicker() {
-  var colorpicker = document.getElementById("colorpicker");
-  var hexColor = colorpicker.value;
-  return hexColor;
-}
-
-function getColor() {
-  var hexColor = getColorFromColorPicker();
-  //Converting Hex code to rgba code
-  r = hexToR(hexColor);
-  g = hexToG(hexColor);
-  b = hexToB(hexColor);
-}
-function hexToR(h) {
-  return parseInt((cutHex(h)).substring(0, 2), 16)
-}
-function hexToG(h) {
-  return parseInt((cutHex(h)).substring(2, 4), 16)
-}
-function hexToB(h) {
-  return parseInt((cutHex(h)).substring(4, 6), 16)
-}
-function cutHex(h) {
-  return (h.charAt(0) == "#") ? h.substring(1, 7) : h
-}
-
 function getPencilSize () {
   pencilSize = pencilSizeValue;
-  //pencilSize = document.getElementById("pencilsize").value;
 }
 
 function createPencilArray () {
@@ -127,6 +119,8 @@ function paintBucket() {
 
 function activatePencil () {
   actualPencilType = 1;
+  toolController.setPencilActive(true);
+  console.log(toolController);
   $("#btnPencil").animate({ "height": "27px" , "width": "27px" }, "fast");
   $("#btnPipette").animate({ "height": "25px" , "width": "25px" }, "fast");
   $("#btnPaintBucket").animate({ "height": "25px" , "width": "25px" }, "fast");
@@ -135,6 +129,8 @@ function activatePencil () {
 
 function activatePipette () {
   actualPencilType = 2;
+  toolController.setPipetteActive(true);
+  console.log(toolController);
   $("#btnPipette").animate({ "height": "27px" , "width": "27px" }, "fast");
   $("#btnPencil").animate({ "height": "25px" , "width": "25px" }, "fast");
   $("#btnPaintBucket").animate({ "height": "25px" , "width": "25px" }, "fast");
@@ -143,20 +139,25 @@ function activatePipette () {
 
 function activatePaintBucket () {
   actualPencilType = 3;
+  toolController.setPaintBucketActive(true);
+  console.log(toolController);
   $("#btnPaintBucket").animate({ "height": "27px" , "width": "27px" }, "fast");
   $("#btnPencil").animate({ "height": "25px" , "width": "25px" }, "fast");
   $("#btnPipette").animate({ "height": "25px" , "width": "25px" }, "fast");
   $("#btnEraser").animate({ "height": "25px" , "width": "25px" }, "fast");
-}
+};
 
 function activateEraser ()  {
   actualPencilType = 4;
+  toolController.setEraserActive(true);
+  console.log(toolController);
   $("#btnEraser").animate({ "height": "27px" , "width": "27px" }, "fast");
   $("#btnPencil").animate({ "height": "25px" , "width": "25px" }, "fast");
   $("#btnPipette").animate({ "height": "25px" , "width": "25px" }, "fast");
   $("#btnPaintBucket").animate({ "height": "25px" , "width": "25px" }, "fast");
-}
+};
 
+// Browser Detection
 var isMobile = {
     Android: function () {
         return navigator.userAgent.match(/Android/i);
@@ -173,17 +174,25 @@ var isMobile = {
     Windows: function () {
         return navigator.userAgent.match(/IEMobile/i);
     },
-    any: function () {
+    anyMobile: function () {
         return ((isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows()));
     }
 };
 
+
 function detectDevice() {
-    if (isMobile.any()) {
+    // Auf Mobile Geräte prüfen
+    if (isMobile.anyMobile()) {
       $("#body").animate({opacity: 0}, 1);
         alert('Upps! Sorry but this Website is not available on mobile devices :(');
     }
-};
+    // Auf Internet-Explorer prüfen
+    else if (/*@cc_on!@*/false || !!document.documentMode) {
+        $("#body").animate({opacity: 0}, 1);
+          console.log('Upps! Sorry but this Website is not available on Internet Explorer :(');
+      }
+    };
+
 
 function pencilSizeChooser() {
   if(!pencilChooserPopupOpen) {
@@ -193,7 +202,7 @@ function pencilSizeChooser() {
     $("#pencilsizePopup").animate({"opacity": "0", "margin-left": "0"}, "fast");
   }
   pencilChooserPopupOpen = !pencilChooserPopupOpen;
-}
+};
 
 function px5()  {
   pencilSizeValue = 5;
