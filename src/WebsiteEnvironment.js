@@ -1,4 +1,3 @@
-
 console.log("         ____   ____  ________\n         \\   \\ /   / /   _____/\n  ______  \\   Y   / /   \\  ___   ______\n /_____/   \\     /  \\    \\_\\  \\ /_____/\n            \\___/    \\______  /\n                            \\/          \n www.veteran-gaming.at\n\n made by GameMind | Jonas");
 
 var toolController;
@@ -48,6 +47,15 @@ window.onload = function() {
 
     use (e) {
       console.log("Tool Pipette used");
+      x = e.pageX || event.clientX + document.body.scrollLeft;
+      y = e.pageY || event.clientY + document.body.scrollTop;
+      var lContext = context.getImageData(x, y, 300, 150);
+      var hexColor = "#" + lContext.data[4 * (y * lContext.width + x)].toString(16) +
+          	                lContext.data[4 * (y * lContext.width + x) + 1].toString(16) +
+                            lContext.data[4 * (y * lContext.width + x) + 2].toString(16);
+      $("#colorpicker").val(hexColor);
+      console.log(hexColor);
+
     }
 
   }
@@ -323,8 +331,9 @@ function detectDevice() {
         alert('Upps! Sorry but this Website is not available on mobile devices :(');
     }
     // Auf Internet-Explorer prüfen
+
     else if (/*@cc_on!@*/false || !!document.documentMode) {
-        $("#body").animate({opacity: 0}, 1);
+    $("#body").animate({opacity: 0}, 1);
           console.log('Upps! Sorry but this Website is not available on Internet Explorer :(');
       }
     };
