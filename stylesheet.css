@@ -1,8 +1,8 @@
 :root {
-  --color1: #d9d9d9;
-  --color2: #b3b3b3;
-  --buttoncolor1: #FFB700;
-  --buttoncolor2: #FF7600;
+  --color1: #f7f7f7;
+  --color2: #e2e0e0;
+  --buttoncolor1: #f7f7f7;
+  --buttoncolor2: #efefef;
   --fontcolor1: white;
 }
 
@@ -15,14 +15,13 @@ canvas#gamecanvas {
   border-radius: 2px;
   border: 1px;
   border-style: solid;
-  border-color: black;
+  border-color: #4286f4;
   border-bottom: 1px;
 }
 
 body#body {
-  background-image: linear-gradient(#595959);
   margin: 0px;
-  background-color: darkgray;
+  background-color: #689ff9;
   opacity: 0;
 }
 
@@ -31,12 +30,11 @@ input#colorpicker {
   margin-top:-1px;
   width: 25px;
   height: 25px;
-  background-color: lightgray;
+  background-color: #f7f7f7;
   border-radius: 2px;
   border: 1px;
   border-style: solid;
-  border-color: black;
-  background-image: linear-gradient(var(--buttoncolor1), var(--buttoncolor2));
+  border-color: #4286f4;
 }
 
 img {
@@ -46,8 +44,7 @@ img {
 }
 
 button {
-  background-image: linear-gradient(var(--buttoncolor1), var(--buttoncolor2));
-  background-color: lightgray;
+  background-color: #f7f7f7;
   width: 25px;
   height: 25px;
   margin: 0px;
@@ -55,7 +52,7 @@ button {
   border-radius: 2px;
   border: 1px;
   border-style: solid;
-  border-color: black;
+  border-color: #4286f4;
 }
 
 input#pencilsize {
@@ -68,7 +65,7 @@ input#pencilsize {
   border-radius: 2px;
   border: 1px;
   border-style: solid;
-  border-color: black;
+  border-color: #4286f4;
   font-size: 10px;
 }
 
@@ -90,7 +87,7 @@ div#header {
   text-align: center;
   border-bottom: 0px;
   padding-top: 3px;
-  border-color: black;
+  border-color: #4286f4;
 }
 
 div#modules{
@@ -105,7 +102,7 @@ div#modules{
   border-bottom-left-radius: 3px;
   border: 1px;
   border-style: solid;
-  border-color: black;
+  border-color: #4286f4;
   border-top: 0px;
   padding-top: 3px;
 }
@@ -118,7 +115,7 @@ div#pencilsizePopup {
   border-radius: 2px;
   border: 1px;
   border-style: solid;
-  border-color: black;
+  border-color: #4286f4;
   background-image: linear-gradient(var(--color1), var(--color2));
 }
 
@@ -135,4 +132,25 @@ button[name="pencilSizeButton"] {
   width: 32px;
   margin-top: 2px;
   margin-left: 2px;
+}
+
+div#toolInfo {
+  background-image: linear-gradient(var(--buttoncolor1), var(--buttoncolor2));
+  background-color: #f7f7f7;
+  width: 150px;
+  height: 20px;
+  border-style: solid;
+  border-color: #4286f4;
+  border-radius: 2px;
+  text-align: center;
+  margin-top: 1px;
+  margin-left: auto;
+  margin-right: auto;
+  opacity: 0;
+}
+
+label#toolInfoText {
+  font-family: "Lucida Console";
+  font-size: 12px;
+  text-align: center;
 }

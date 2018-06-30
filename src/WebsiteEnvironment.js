@@ -16,10 +16,24 @@ var x = 0,
 var pencilChooserPopupOpen = false;
 
 window.onload = function() {
+
+  $("#btnPencil").mouseenter(function(){setToolInfo("Brush");$("#toolInfo").stop();$("#btnPencil").css({"background-color":  "#689ff9"});$("#toolInfo").animate({"opacity": "1"}, "fast");});
+  $("#btnPencil").mouseleave(function(){$("#toolInfo").stop();$("#btnPencil").css({"background-color":  "#f7f7f7"});$("#toolInfo").animate({"opacity": "0"}, "fast");});
+  $("#btnEraser").mouseenter(function(){setToolInfo("Eraser");$("#toolInfo").stop();$("#btnEraser").css({"background-color":  "#689ff9"});$("#toolInfo").animate({"opacity": "1"}, "fast");});
+  $("#btnEraser").mouseleave(function(){$("#toolInfo").stop();$("#btnEraser").css({"background-color":  "#f7f7f7"});$("#toolInfo").animate({"opacity": "0"}, "fast");});
+  $("#btnPaintBucket").mouseenter(function(){setToolInfo("Paint bucket");$("#toolInfo").stop();$("#btnPaintBucket").css({"background-color":  "#689ff9"});$("#toolInfo").animate({"opacity": "1"}, "fast");});
+  $("#btnPaintBucket").mouseleave(function(){$("#toolInfo").stop();$("#btnPaintBucket").css({"background-color":  "#f7f7f7"});$("#toolInfo").animate({"opacity": "0"}, "fast");});
+  $("#btnPipette").mouseenter(function(){setToolInfo("Pipette");$("#toolInfo").stop();$("#btnPipette").css({"background-color":  "#689ff9"});$("#toolInfo").animate({"opacity": "1"}, "fast");});
+  $("#btnPipette").mouseleave(function(){$("#toolInfo").stop();$("#btnPipette").css({"background-color":  "#f7f7f7"});$("#toolInfo").animate({"opacity": "0"}, "fast");});
+  $("#colorpicker").mouseenter(function(){setToolInfo("Colorpicker");$("#toolInfo").stop();$("#colorpicker").css({"background-color":  "#689ff9"});$("#toolInfo").animate({"opacity": "1"}, "fast");});
+  $("#colorpicker").mouseleave(function(){$("#toolInfo").stop();$("#colorpicker").css({"background-color":  "#f7f7f7"});$("#toolInfo").animate({"opacity": "0"}, "fast");});
+  $("#btnTrash").mouseenter(function(){setToolInfo("Clear painting");$("#toolInfo").stop();$("#btnTrash").css({"background-color":  "#689ff9"});$("#toolInfo").animate({"opacity": "1"}, "fast");});
+  $("#btnTrash").mouseleave(function(){$("#toolInfo").stop();$("#btnTrash").css({"background-color":  "#f7f7f7"});$("#toolInfo").animate({"opacity": "0"}, "fast");});
+  function setToolInfo(info){$("#toolInfoText").text(info);}
+
   class CPencil {
 
     use (e) {
-      //console.log("Tool pencil used");
       x = e.pageX || event.clientX + document.body.scrollLeft;
       y = e.pageY || event.clientY + document.body.scrollTop;
       createImage();
@@ -161,8 +175,8 @@ window.onload = function() {
 
   $(window).resize(function () {
     pencilChooserPopupOpen = false;
-    $("#pencilsizePopup").animate({"opacity": "0", "margin-left": "0"}, "fast");
   });
+  $("#pencilsizePopup").animate({"opacity": "0", "margin-left": "0"}, "fast");
 
   var iScrollPos = 0;
   $(window).scroll(function() {
@@ -177,13 +191,6 @@ window.onload = function() {
     }
     iScrollPos = iCurScrollPos;
   });
-/*
-  function draw(e) {
-    x = e.pageX || event.clientX + document.body.scrollLeft;
-    y = e.pageY || event.clientY + document.body.scrollTop;
-    createImage();
-  }
-*/
   $("#word").text("_ _ _ _ _ _");
   activatePencil();
   $("#body").animate({opacity: 1}, "slow");
@@ -200,7 +207,6 @@ window.onload = function() {
   element.onmousemove = function(e) {
     if (mouseIsDown) {
       toolController.useTool(e);
-      //draw(e);
     }
   }
 
@@ -230,7 +236,6 @@ window.onload = function() {
     y-=parseInt($("#header").css("height"));
     y-=parseInt($("#header").css("margin-top"));
     x-=Math.round(pencilSize/2);
-    //y-=Math.round(pencilSize/2);
     y-=pencilSize;
     for (var ix=0;ix<pencilSize;ix++) {
       for (var iy=0;iy<pencilSize;iy++) {
@@ -269,6 +274,7 @@ function activatePencil () {
   $("#btnPipette").animate({ "height": "25px" , "width": "25px" }, "fast");
   $("#btnPaintBucket").animate({ "height": "25px" , "width": "25px" }, "fast");
   $("#btnEraser").animate({ "height": "25px" , "width": "25px" }, "fast");
+  $("#btnTrash").animate({ "height": "25px" , "width": "25px" }, "fast");
 }
 
 function activatePipette () {
@@ -279,6 +285,7 @@ function activatePipette () {
   $("#btnPencil").animate({ "height": "25px" , "width": "25px" }, "fast");
   $("#btnPaintBucket").animate({ "height": "25px" , "width": "25px" }, "fast");
   $("#btnEraser").animate({ "height": "25px" , "width": "25px" }, "fast");
+  $("#btnTrash").animate({ "height": "25px" , "width": "25px" }, "fast");
 }
 
 function activatePaintBucket () {
@@ -289,6 +296,7 @@ function activatePaintBucket () {
   $("#btnPencil").animate({ "height": "25px" , "width": "25px" }, "fast");
   $("#btnPipette").animate({ "height": "25px" , "width": "25px" }, "fast");
   $("#btnEraser").animate({ "height": "25px" , "width": "25px" }, "fast");
+  $("#btnTrash").animate({ "height": "25px" , "width": "25px" }, "fast");
 };
 
 function activateEraser ()  {
@@ -299,7 +307,16 @@ function activateEraser ()  {
   $("#btnPencil").animate({ "height": "25px" , "width": "25px" }, "fast");
   $("#btnPipette").animate({ "height": "25px" , "width": "25px" }, "fast");
   $("#btnPaintBucket").animate({ "height": "25px" , "width": "25px" }, "fast");
+  $("#btnTrash").animate({ "height": "25px" , "width": "25px" }, "fast");
 };
+
+function activateTrash () {
+  $("#btnTrash").animate({ "height": "27px" , "width": "27px" }, "fast");
+  $("#btnEraser").animate({ "height": "25px" , "width": "25px" }, "fast");
+  $("#btnPencil").animate({ "height": "25px" , "width": "25px" }, "fast");
+  $("#btnPipette").animate({ "height": "25px" , "width": "25px" }, "fast");
+  $("#btnPaintBucket").animate({ "height": "25px" , "width": "25px" }, "fast");
+}
 
 // Browser Detection
 var isMobile = {
@@ -390,7 +407,6 @@ function px40()  {
 };
 
 function pixelLog () {
-  //console.log("Pencilsize:" + pencilSizeValue);
   pencilChooserPopupOpen = false;
   $("#pencilSize").text(pencilSizeValue + "px");
   $("#pencilsizePopup").animate({"opacity": "0", "margin-left": "0"}, "fast");
