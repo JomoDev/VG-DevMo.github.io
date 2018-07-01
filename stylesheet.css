@@ -16,7 +16,7 @@ canvas#gamecanvas {
   border: 1px;
   border-style: solid;
   border-color: #4286f4;
-  border-bottom: 1px;
+  /*border-bottom: 1px;*/
 }
 
 body#body {
@@ -72,7 +72,6 @@ input#pencilsize {
 div#header {
   background-image: linear-gradient(var(--color1), var(--color2));
   padding: 0px;
-  margin-top: 10px;
   width: 300px;
   height: 30px;
   margin-left: auto;
@@ -105,6 +104,15 @@ div#modules{
   border-color: #4286f4;
   border-top: 0px;
   padding-top: 3px;
+}
+
+div#all {
+    margin-top: 10px;
+    height: 220px;
+    box-shadow: 4px 4px 15px 0px rgba(0,0,0,0.5);
+    width: 300px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 div#pencilsizePopup {
@@ -147,10 +155,12 @@ div#toolInfo {
   margin-left: auto;
   margin-right: auto;
   opacity: 0;
+  box-shadow: 4px 4px 15px 0px rgba(0,0,0,0.5);
 }
 
 label#toolInfoText {
   font-family: "Lucida Console";
   font-size: 12px;
   text-align: center;
+  text-shadow: 1px 1px lightgray;
 }
