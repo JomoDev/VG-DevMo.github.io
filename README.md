@@ -1,3 +1,3 @@
 # jondijon13.github.io
 
-Website is reachable at: https://jondijon13.github.io/index.html
+Website is reachable at: https://vg-devmind.github.io/
