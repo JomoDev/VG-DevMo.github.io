@@ -1,0 +1,23 @@
+{
+  "name": "jondijon13.github.io",
+  "version": "1.0.0",
+  "description": "Website",
+  "main": "Gruntfile.js",
+  "scripts": {
+    "test": "grunt log"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jondijon13/jondijon13.github.io.git"
+  },
+  "author": "Jonas",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jondijon13/jondijon13.github.io/issues"
+  },
+  "homepage": "https://github.com/jondijon13/jondijon13.github.io#readme",
+  "devDependencies": {
+    "grunt": "^1.0.3",
+    "grunt-localhosts": "^0.1.0"
+  }
+}
