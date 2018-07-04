@@ -15,7 +15,7 @@ canvas#gamecanvas {
   border-radius: 2px;
   border: 1px;
   border-style: solid;
-  border-color: #4286f4;
+  border-color: #c4c4c4;
   /*border-bottom: 1px;*/
 }
 
@@ -86,7 +86,7 @@ div#header {
   text-align: center;
   border-bottom: 0px;
   padding-top: 3px;
-  border-color: #4286f4;
+  border-color: #c4c4c4;
 }
 
 div#modules{
@@ -101,7 +101,7 @@ div#modules{
   border-bottom-left-radius: 3px;
   border: 1px;
   border-style: solid;
-  border-color: #4286f4;
+  border-color: #c4c4c4;
   border-top: 0px;
   padding-top: 3px;
 }
@@ -148,10 +148,10 @@ div#toolInfo {
   width: 150px;
   height: 20px;
   border-style: solid;
-  border-color: #4286f4;
+  border-color: #c4c4c4;
   border-radius: 2px;
   text-align: center;
-  margin-top: 1px;
+  margin-top: 2px;
   margin-left: auto;
   margin-right: auto;
   opacity: 0;
