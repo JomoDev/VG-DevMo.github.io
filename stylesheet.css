@@ -6,6 +6,11 @@
   --fontcolor1: white;
 }
 
+table#subdivision {
+  margin-left: auto;
+  margin-right: auto;
+}
+
 canvas#gamecanvas {
   margin: 0px;
   margin-left: auto;
@@ -156,6 +161,27 @@ div#toolInfo {
   margin-right: auto;
   opacity: 0;
   box-shadow: 4px 4px 15px 0px rgba(0,0,0,0.5);
+}
+
+div#chat {
+  margin-top: 16px;
+  height: 215px;
+  width: 170px;
+  border-radius: 3px;
+  background-color: white;
+  border: 1px;
+  border-style: solid;
+  border-color: #c4c4c4;
+}
+
+input#chatInput {
+  margin-top: 194px;
+  width: 165px;
+  background-color: #f7f7f7;
+  border-radius: 2px;
+  border: 1px;
+  border-style: solid;
+  border-color: #4286f4;
 }
 
 label#toolInfoText {
