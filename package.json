@@ -18,6 +18,7 @@
   "homepage": "https://github.com/jondijon13/jondijon13.github.io#readme",
   "devDependencies": {
     "grunt": "^1.0.3",
-    "grunt-localhosts": "^0.1.0"
+    "grunt-localhosts": "^0.1.0",
+    "grunt-serve": "^0.1.6"
   }
 }
