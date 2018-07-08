@@ -197,7 +197,7 @@ window.onload = function() {
   detectDevice();
   var element = document.getElementById('gamecanvas');
   // unnötiges setzen des Cursors -> kann man auch weglassen, is aber cool
-  element.style.cursor = "pointer";
+//  element.style.cursor = "url(src/icons/draw_cursor.png)";
   var context = element.getContext('2d'),
     imgData;
   context.fillStyle = '#f7f7f7';

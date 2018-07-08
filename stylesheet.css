@@ -22,6 +22,7 @@ canvas#gamecanvas {
   border: 1px;
   border-style: solid;
   border-color: #c4c4c4;
+  cursor: url(src/icons/draw_cursor_25px.png), pointer;
   /*border-bottom: 1px;*/
 }
 
@@ -59,6 +60,7 @@ button {
   border: 1px;
   border-style: solid;
   border-color: #4286f4;
+  cursor: pointer;
 }
 
 input#pencilsize {
@@ -191,4 +193,15 @@ label#toolInfoText {
   font-size: 12px;
   text-align: center;
   text-shadow: 1px 1px lightgray;
+}
+
+div#toolDiv {
+  height: 10px;
+  width: 10px;
+  border-style: solid;
+  border-width: 2px;
+  border-radius: 10px;
+  margin: 10px;
+  background-color: red;
+  border-color: white;
 }
