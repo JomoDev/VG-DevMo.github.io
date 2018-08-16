@@ -1,0 +1,59 @@
+html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  /*background: linear-gradient(to right, #3a3a3a, #2d2d2d);*/
+}
+
+body {
+  padding: 0px;
+}
+
+.gamecanvas {
+  border-radius: 2px;
+  border: 2px;
+  border-style: solid;
+  border-color: darkgray;
+  margin-left: auto;
+  margin-right: auto;
+  width: 900px;
+  height: 550px;
+
+}
+
+.controls {
+  width: 900px;
+  height: 35px;
+  margin-left: auto;
+  margin-right: auto;
+}
+/*
+header {
+
+  margin-left: auto;
+  margin-right: auto;
+  margin: 0px;
+  height: 100px;
+}
+
+.header {
+    background: linear-gradient(to right, #141a3a, #663793,#a27665);
+    height: 50px;
+}
+
+.logo {
+  width: 60px;
+  height: 60px;
+  margin-left: 50px;
+  margin-top: 5px;
+}
+
+.logo_text {
+  margin-top: 10px;
+  width: 100px;
+  height: 50px;
+  color:white;
+  vertical-align: top;
+}
+*/
