@@ -12,6 +12,7 @@ body {
 }
 
 .gamecanvas {
+  margin-top: 50px;
   border-radius: 2px;
   border: 2px;
   border-style: solid;
@@ -31,11 +32,21 @@ body {
 }
 
 #download {
+  vertical-align: middle;
     float:right;
     cursor:pointer;
     color:  darkgray;
     padding:3px;
 }
+
 #download:hover {
     color: black;
+}
+
+#size {
+    vertical-align: middle;
+}
+
+#color {
+  margin-top: 5px;
 }
