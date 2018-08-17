@@ -1,8 +1,5 @@
 var context = document.getElementById('canvas').getContext("2d");
 var paint = false;
-var clickColor = new Array();
-var clickSize = new Array();
-
 
 context.fillStyle = "#ffffff";
 context.fillRect(0,0, context.width, context.height);
@@ -34,6 +31,8 @@ $("#canvas").mouseleave(function(e){
 var clickX = new Array();
 var clickY = new Array();
 var clickDrag = new Array();
+var clickColor = new Array();
+var clickSize = new Array();
 var paint;
 
 function addClick(x, y, dragging)
@@ -48,7 +47,6 @@ function addClick(x, y, dragging)
 function redraw(){
   context.clearRect(0, 0, context.canvas.width, context.canvas.height); // Clears the canvas
 
-  //context.strokeStyle = "#df4b26";
   context.lineJoin = "round";
 
   for(var i=0; i < clickX.length; i++) {
