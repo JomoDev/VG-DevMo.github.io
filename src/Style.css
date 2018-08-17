@@ -1,4 +1,5 @@
 html {
+  font-family: 'Consolas';
   margin: 0;
   padding: 0;
   height: 100%;
@@ -27,4 +28,14 @@ body {
   height: 35px;
   margin-left: auto;
   margin-right: auto;
+}
+
+#download {
+    float:right;
+    cursor:pointer;
+    color:  darkgray;
+    padding:3px;
+}
+#download:hover {
+    color: black;
 }

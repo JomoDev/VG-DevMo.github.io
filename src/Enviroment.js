@@ -72,3 +72,13 @@ function clearCanvas()
 {
 	context.clearRect(0, 0, context.Height, context.Width);
 }
+
+document.getElementById('download').addEventListener('click', function() {
+    downloadCanvas(this, 'canvas', 'test.png');
+}, false);
+
+function downloadCanvas(link, canvasId, filename) {
+    console.log("test");
+    link.href = document.getElementById(canvasId).toDataURL();
+    link.download = filename;
+}
