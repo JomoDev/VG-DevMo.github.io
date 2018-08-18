@@ -2,7 +2,8 @@ var context = document.getElementById('canvas').getContext("2d");
 var paint = false;
 
 context.fillStyle = "#ffffff";
-context.fillRect(0,0, context.Width, context.Height);
+context.fillRect(0,0, 720, 540);
+
 context.lineJoin = "round";
 
 $("#canvas").mousedown(function(e){
