@@ -2,7 +2,8 @@ var context = document.getElementById('canvas').getContext("2d");
 var paint = false;
 
 context.fillStyle = "#ffffff";
-context.fillRect(0,0, context.width, context.height);
+context.fillRect(0,0, context.Width, context.Height);
+context.lineJoin = "round";
 
 $("#canvas").mousedown(function(e){
   var mouseX = e.pageX - this.offsetLeft;
@@ -45,9 +46,6 @@ function addClick(x, y, dragging)
 }
 
 function redraw(){
-  context.clearRect(0, 0, context.canvas.width, context.canvas.height); // Clears the canvas
-
-  context.lineJoin = "round";
 
   for(var i=0; i < clickX.length; i++) {
     context.beginPath();
