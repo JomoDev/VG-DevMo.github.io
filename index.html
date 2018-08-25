@@ -12,9 +12,22 @@
     <link rel="shortcut icon" type="image/x-icon" href="src/img/vg_logo_final_klein.png"/>
     <title>VG-Montagsmaler</title>
     <link rel="stylesheet" type="text/css" href="src/Style.css"/>
+    <link rel="stylesheet" type="text/css" href="src/StandardControllStyle.css"/>
   </head>
 
+  <div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" id="closeNavigation" class="closebtn" onclick="closeNav()">&times;</a>
+    <a href="#">About</a>
+    <a href="#">Services</a>
+    <a href="#">Clients</a>
+    <a href="#">Contact</a>
+    <a href="http://discord.veteran-gaming.at">Discord</a>
+  </div>
+
+  <span id="openNavigation" style="font-size:30px;cursor:pointer;margin: 5px" onclick="openNav()">&#9776;</span>
+
   <body>
+
     <div id="drawdiv" class="gamecanvas">
       <canvas id="canvas" width="720" height="540"></canvas>
     </div>
@@ -25,12 +38,13 @@
     </div>
   </body>
 
+
   <footer>
     <div id="discord_ad" class="discord_ad">
       <p id="discord_ad_msg" class="discord_ad">
         <label id="discord_ad_msg" class="discord_ad_msg">Dir gefällt das Spiel? Dann schau doch mal auf unserem Discord vorbei </label>
         <a id="discord_link" href="http://discord.veteran-gaming.at">discord.veteran-gaming.at</a>
-        <button id="discord_ad_ok" class="discord_ad_ok">Ok</button>
+        <button id="discord_ad_ok" class="button">Ok</button>
       </p>
     </div>
     <script type="text/javascript" src="src/Enviroment.js"></script>
