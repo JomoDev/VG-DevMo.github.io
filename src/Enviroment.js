@@ -94,3 +94,7 @@ function closeNav() {
 function updateSlider(e) {
   document.getElementById('sliderValue').innerHTML = e;
 }
+
+function reloadPage() {
+  location.reload();
+}
