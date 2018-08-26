@@ -1,3 +1,5 @@
+var chatIsOn = true;
+
 var context = document.getElementById('canvas').getContext("2d");
 var paint = false;
 
@@ -98,3 +100,17 @@ function updateSlider(e) {
 function reloadPage() {
   location.reload();
 }
+
+$("#openChat").click(function (e) {
+  $("#myChat").stop();
+  if(!chatIsOn) {
+    $("#myChat").animate({
+      "width": "400px"
+    }, "slow");
+  } else {
+    $("#myChat").animate({
+      "width": "0"
+    }, "slow");
+  }
+  chatIsOn = !chatIsOn;
+});
