@@ -12,7 +12,7 @@ html {
 body {
   padding: 0;
   margin: 0;
-  background-color: #444;
+  background-color: #222;
 }
 
 .gamecanvas {
@@ -20,7 +20,7 @@ body {
   border-radius: 2px;
   border: 2px;
   border-style: solid;
-  border-color: #333;
+  border-color: #111;
   margin-left: auto;
   margin-right: auto;
   width: 720px;
@@ -56,7 +56,7 @@ body {
 }
 
 .discord_ad {
-  background-color: #333;
+  background-color: #111;
   position: absolute;
   bottom: 0;
   width: 100%;
@@ -161,7 +161,7 @@ height: 30px;
 /* The navigation bar */
 .navbar {
     overflow: hidden;
-    background-color: #333;
+    background-color: #111;
     position: fixed; /* Set the navbar to fixed position */
     top: 0; /* Position the navbar at the top of the page */
     width: 100%; /* Full width */
