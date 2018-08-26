@@ -36,8 +36,11 @@
       <canvas id="canvas" width="720" height="540"></canvas>
     </div>
     <div class="controls">
-      <input id="size" class="slider" type="range" min="1" max="40" value="25"/>
-      <input id="color" type="color" value="#000000"/>
+      <div class="tooltip">
+        <input id="size" class="slider" type="range" min="1" max="40" value="25" oninput="updateSlider(this.value)" onchange="updateSlider(this.value)"/>
+        <span class="tooltiptext"><label id="sliderValue">25</label></span>
+      </div>
+      <input id="color" type="color" class="tooltip" value="#000000"/>
       <a id="download">Herunterladen</a>
     </div>
   </body>

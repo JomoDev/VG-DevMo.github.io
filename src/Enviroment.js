@@ -90,3 +90,7 @@ function openNav() {
 function closeNav() {
     document.getElementById("mySidenav").style.width = "0";
 }
+
+function updateSlider(e) {
+  document.getElementById('sliderValue').innerHTML = e;
+}
