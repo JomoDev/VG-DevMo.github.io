@@ -160,11 +160,15 @@ height: 30px;
 }
 
 #openNavigation:hover {
+    text-shadow: 2px 2px gray;
   color:black !important;
 }
 
 /* The navigation bar */
 .navbar {
+  display: inline-block;
+vertical-align: middle;
+  text-align: center;
     overflow: hidden;
     background-color: #111;
     position: fixed; /* Set the navbar to fixed position */
@@ -298,4 +302,18 @@ height: 30px;
   height: 28px;
   text-align: middle;
   text-align: center;
+}
+
+#openChat:hover {
+  text-shadow: 1px 1px gray;
+}
+
+#wordLbl {
+  color:#f1f1f1;
+  font-size: 30pt;
+  cursor: help;
+}
+
+#wordLbl:hover {
+  text-shadow: 2px 2px gray;
 }
