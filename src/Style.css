@@ -248,7 +248,7 @@ height: 30px;
 }
 
 .sidechat {
-  overflow:scroll;
+  overflow-x:scroll;
   position: absolute;
   top: 68px;
   bottom: 0px;
