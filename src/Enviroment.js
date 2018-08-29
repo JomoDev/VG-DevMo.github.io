@@ -126,5 +126,5 @@ function closeSearch() {
 }
 
 document.onkeydown = function(event) {
-  console.log("keypressed:" + event);
+  openSearch();
 }
