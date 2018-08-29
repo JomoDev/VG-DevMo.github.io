@@ -132,8 +132,7 @@ function startSearch() {
 
 var controlIsPressed = false;
 
-document.onkeydown = function(event) {
-  console.log(event);
+document.onkeypress = function(event) {
   if(event.code == "ControlLeft") {
     controlIsPressed != controlIsPressed;
   }
