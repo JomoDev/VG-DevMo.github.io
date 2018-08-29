@@ -125,6 +125,11 @@ function closeSearch() {
   document.getElementById("myOverlay").style.display = "none";
 }
 
+function startSearch() {
+	var searchval = $("#searchbar").val();
+	window.location.href="https://www.google.de/search?q=" + searchval;
+}
+
 document.onkeydown = function(event) {
   openSearch();
 }
