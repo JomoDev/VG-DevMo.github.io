@@ -371,6 +371,7 @@ vertical-align: middle;
 
 /* Style the submit button */
 .overlay button {
+  position: absolute;
   float: left;
   width: 20%;
   padding: 15px;
@@ -399,10 +400,6 @@ vertical-align: middle;
     background-color: inherit;
     font-family: inherit;
     margin: 0;
-}
-
-.navbar a:hover, .dropdown:hover .dropbtn {
-    background-color: red;
 }
 
 .dropdown-content {
