@@ -131,5 +131,6 @@ function startSearch() {
 }
 
 document.onkeydown = function(event) {
-  openSearch();
+  console.log(event);
+  //openSearch();
 }
