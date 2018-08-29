@@ -16,6 +16,16 @@
     <link rel="stylesheet" type="text/css" href="src/StandardControllStyle.css"/>
   </head>
 
+  <div id="myOverlay" class="overlay">
+   <span class="closebtn" onclick="closeSearch()" title="Close Overlay">x</span>
+   <div class="overlay-content">
+    <form action="action_page.php">
+      <input type="text" placeholder="Search.." name="search">
+      <button type="submit"><i class="fa fa-search"></i></button>
+    </form>
+   </div>
+  </div>
+ 
   <div class="navbar">
     <a id="openNavigation" style="color:white;font-size:30px;cursor:pointer;" onclick="openNav()">&#9776;</a>
     <a id="sideHeader" onclick="reloadPage()">VG-Montagsmaler</a>
