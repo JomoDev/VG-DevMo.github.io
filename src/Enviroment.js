@@ -130,13 +130,8 @@ function startSearch() {
 	window.location.href="https://www.google.de/search?q=" + searchval;
 }
 
-var controlIsPressed = false;
-
 document.onkeypress = function(event) {
-  if(event.code == "ControlLeft") {
-    controlIsPressed != controlIsPressed;
-  }
-  if(event.code == "KeyF" && controlIsPressed) {
+  if(event.key == "h" || event.key == "H") {
 	openSearch();
   }
 }
