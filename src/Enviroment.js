@@ -130,7 +130,14 @@ function startSearch() {
 	window.location.href="https://www.google.de/search?q=" + searchval;
 }
 
+var controlIsPressed = false;
+
 document.onkeydown = function(event) {
   console.log(event);
-  //openSearch();
+  if(event.code == "ControlLeft") {
+    controlIsPressed != controlIsPressed;
+  }
+  if(event.code == "KeyF" && controlIsPressed) {
+	openSearch();
+  }
 }
