@@ -2,6 +2,11 @@
 /* width */
 ::-webkit-scrollbar {
     width: 10px;
+    opacity: 0;
+}
+
+::-webkit-scrollbar:hover {
+    opacity:1;
 }
 
 /* Track */
