@@ -3,7 +3,7 @@ window.onload = function() {
   readCookieData();
 
   function readCookieData () {
-    var cookieVal = ud_read_cookie(" UserName");
+    var cookieVal = ud_read_cookie("UserName");
     console.log(cookieVal);
     $("#_UserName").val(cookieVal);
   }
@@ -26,7 +26,7 @@ window.onload = function() {
   }
 
   function ud_read_cookie (UD_OBJECT) {
-    
+
     var UD_ELEMENT = UD_OBJECT + "=";
 
     var UD_COOKIE_ARRAY = document.cookie.split(";");
