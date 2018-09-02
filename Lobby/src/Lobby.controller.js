@@ -4,13 +4,11 @@ window.onload = function() {
 
   function readCookieData () {
     var cookieVal = ud_read_cookie("UserName");
-    console.log(cookieVal);
     $("#_UserName").val(cookieVal);
   }
 
   $("#_ConfirmData").click(function(oEvent) {
     var usernameVal = $("#_UserName").val();
-    console.log(usernameVal);
     ud_create_cookie("UserName", usernameVal);
   });
 
