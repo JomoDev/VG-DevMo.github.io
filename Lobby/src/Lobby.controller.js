@@ -1,5 +1,6 @@
 window.onload = function() {
 
+  testRequest();
   readCookieData();
 
   function readCookieData () {
@@ -39,9 +40,17 @@ window.onload = function() {
       if(UD_COOKIE_ELEMENT.indexOf(UD_ELEMENT) === 0) {
         return UD_COOKIE_ELEMENT.substring(UD_ELEMENT.length, UD_COOKIE_ELEMENT.length);
       }
-
     }
+  }
 
+  function testRequest () {
+    $.ajax({
+      'type': 'POST',
+      'url': 'server.php?action=func1',
+      'success' : function ( data ) {
+          console.log("success")
+        }
+    });
   }
 
 }
