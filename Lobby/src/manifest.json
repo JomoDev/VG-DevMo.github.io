@@ -1,0 +1,11 @@
+{
+  "name": "Veteran Gaming",
+  "short_name": "VG",
+  "theme_color": "#4286f4",
+  "background_color": "#111111",
+  "display": "browser",
+  "scope": "/",
+  "start_url": "/",
+  "orientation": "portrait",
+  "lang": "de"
+}
