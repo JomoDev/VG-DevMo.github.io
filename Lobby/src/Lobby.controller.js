@@ -44,13 +44,14 @@ window.onload = function() {
   }
 
   function testRequest () {
-    $.ajax({
-      'type': 'POST',
-      'url': 'server.php?action=func1',
-      'success' : function ( data ) {
-          console.log("success")
-        }
+    $.ajax({ url: '/server.php',
+             data: {action: 'test'},
+             type: 'post',
+             success: function(output) {
+                          alert(output);
+                      }
     });
+
   }
 
 }
