@@ -7,4 +7,6 @@ if(isset($_POST['action']) && !empty($_POST['action'])) {
         // ...etc...
     }
 }
+function test() {}
+function blah() {}
 >
