@@ -49,7 +49,10 @@ window.onload = function() {
              type: 'post',
              success: function(output) {
                           alert(output);
-                      }
+                      },
+            error: function() {
+              console.log("error");
+            }
     });
 
   }
