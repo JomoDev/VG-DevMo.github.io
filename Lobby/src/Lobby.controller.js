@@ -46,7 +46,7 @@ window.onload = function() {
   function testRequest () {
     $.ajax({ url: '/server.php',
              data: {action: 'test'},
-             type: 'post',
+             type: 'GET',
              success: function(output) {
                           alert(output);
                       },
