@@ -1,14 +1,55 @@
 <!DOCTYPE html>
-<html lang="de">
+<html id="_html" lang="de">
   <head>
+    <meta charset="utf-8"/>
     <link rel="manifest" href="src/manifest.json"/>
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script type="text/javascript" src="src/Lobby.controller.js"></script>
+    <link rel="stylesheet" type="text/css" href="src/Style.css"/>
+    <link rel="stylesheet" type="text/css" href="src/StandardControllStyle.css"/>
   </head>
 
-  <body>
-    <input id="_UserName" type="text"></input>
-    <button id="_ConfirmData">Bestätigen</button>
+  <div class="navbar">
+    <a id="openNavigation" style="color:white;font-size:30px;cursor:pointer;" onclick="openNav()">&#9776;</a>
+    <a id="sideHeader" onclick="reloadPage()">VG-Montagsmaler</a>
+  </div>
+
+  <div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" id="closeNavigation" class="closebtn" onclick="closeNav()">&times;</a>
+    <a href="http://www.veteran-gaming.at/home/index.php">Website</a>
+    <a href="http://discord.veteran-gaming.at">Discord</a>
+    <a href="https://www.youtube.com/channel/UCVkvBtzW9i9C6EJNIsjMQcg">YouTube</a>
+    <a href="#">Impressum</a>
+  </div>
+
+  <body id="_body">
+    <div id="_UserForm">
+      <p>
+        <div class="tooltip">
+          <select id="_Language" name="language" class="input">
+            <option value="DE">DE</option>
+          </select>
+          <span class="tooltiptext">Sprache</span>
+        </div>
+      </p>
+      <p>
+        <div class="tooltip">
+        <input id="_UserName" type="text" placeholder="Name" class="input"></input>
+        <span class="tooltiptext">Nickname</span>
+      </div>
+      </p>
+      <p>
+        <div class="tooltip">
+        <input id="_SessionId" type="text" placeholder="Sitzungs-ID" class="input"></input>
+        <span class="tooltiptext">ID der Sitzung</span>
+      </div>
+      </p>
+      <button id="_ConfirmData" class="button">Bestätigen</button>
+    </div>
   </body>
+
+  <footer>
+      <script type="text/javascript" src="src/Enviroment.js"></script>
+  </footer>
 
 </html>

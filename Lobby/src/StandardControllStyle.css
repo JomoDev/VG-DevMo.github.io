@@ -72,3 +72,16 @@
 .button:active {
   background-color: #7c7c7c;
 }
+
+.input {
+  color:white;
+  font-size: 24px;
+  background-color: #222;
+  border-color: #333;
+  border-width: 2px;
+  border-style: solid;
+}
+
+.input:hover {
+  border-color: #4286f4;
+}
