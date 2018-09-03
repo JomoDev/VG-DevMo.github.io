@@ -53,7 +53,7 @@ window.onload = function() {
 
     var UD_DATUM = new Date();
     console.log(UD_DATUM);
-    UD_DATUM.setTime(UD_DATUM.getTime() + (UD_DATUM*24*60*60*50));
+    UD_DATUM.setTime(UD_DATUM.getTime() + (UD_DELETE*24*60*60*50));
     console.log(UD_DATUM);
     var UD_DELETE = "expires="+UD_DATUM.toUTCString();
 
