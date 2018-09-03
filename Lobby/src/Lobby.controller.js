@@ -1,7 +1,7 @@
 window.onload = function() {
 
   var loadCookie = false;
-
+  
   // Get the modal
   var modal = document.getElementById('myModal');
 
@@ -12,9 +12,17 @@ window.onload = function() {
   var span = document.getElementsByClassName("close")[0];
 
   // When the user clicks on the button, open the modal
-  modal.style.display = "block";
+  
+  if(ud_read_cookie("CookieAllowed") !=== undefined) {
+    modal.style.display = "block";  
+  } else {
+    modal.style.display = "none";
+    loadCookie = true;
+    readCookieData();
+  }
 
   $('#_yes').click(function() {
+    ud_create_cookie("CookieAllowed", "true");
     loadCookie=true;
     modal.style.display = "none";
     if(loadCookie) {
