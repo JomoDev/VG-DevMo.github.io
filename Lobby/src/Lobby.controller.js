@@ -13,7 +13,7 @@ window.onload = function() {
 
   // When the user clicks on the button, open the modal
   
-  if(ud_read_cookie("CookieAllowed") !=== undefined) {
+  if(ud_read_cookie("CookieAllowed") === undefined) {
     modal.style.display = "block";  
   } else {
     modal.style.display = "none";
