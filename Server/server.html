@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html id="_html" lang="de">
+  <head>
+    <meta charset="utf-8"/>
+    <link rel="manifest" href="src/manifest.json"/>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="src/Server.controller.js"></script>
+    <link rel="stylesheet" type="text/css" href="src/Style.css"/>
+    <link rel="stylesheet" type="text/css" href="src/StandardControllStyle.css"/>
+  </head>
+
+  <div class="navbar">
+    <a id="openNavigation" style="color:white;font-size:30px;cursor:pointer;" onclick="openNav()">&#9776;</a>
+    <a id="sideHeader" onclick="reloadPage()">VG-Montagsmaler</a>
+  </div>
+
+  <div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" id="closeNavigation" class="closebtn" onclick="closeNav()">&times;</a>
+    <a href="http://www.veteran-gaming.at/home/index.php">Website</a>
+    <a href="http://discord.veteran-gaming.at">Discord</a>
+    <a href="https://www.youtube.com/channel/UCVkvBtzW9i9C6EJNIsjMQcg">YouTube</a>
+    <a href="#">Impressum</a>
+  </div>
+
+  <body id="_body">
+    <div id="_serverConsole">
+
+    </div>
+    <div id="_sessionIDForm">
+      <div class="label">
+        Sitzngs-ID:
+      </div>
+      <input id="_sessionID" type="text" class="input" readonly></input>
+      <div class="tooltip">
+        <button id="_copyID" class="button">&rarrb;</button>
+        <span class="tooltiptext">Kopieren</span>
+      </div>
+    </div>
+  </body>
+
+  <footer>
+      <script type="text/javascript" src="src/Enviroment.js"></script>
+  </footer>
+
+</html>
