@@ -59,11 +59,9 @@ window.onload = function() {
 
     var UD_DATUM = new Date();
     UD_DATUM.setTime(UD_DATUM.getTime() + (UD_DELETE*24*60*60*50));
-    
-    var UD_DELETE = UD_DATUM + 3600 * 1000 * 24 * 365 * 1;
 
      var CookieDate = new Date;
-    CookieDate.setFullYear(CookieDate.getFullYear() +10);
+    CookieDate.setFullYear(CookieDate.getFullYear() +1);
       
     document.cookie = UD_NAME + '=' + UD_VALUE + ';' + "expires=" + CookieDate.toUTCString()  + ';';
 
