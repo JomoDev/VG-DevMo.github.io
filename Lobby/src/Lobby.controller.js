@@ -62,7 +62,7 @@ window.onload = function() {
     
     var UD_DELETE = UD_DATUM + 3600 * 1000 * 24 * 365 * 1;
 
-    document.cookie = UD_NAME + '=' + UD_VALUE + ';' + "expires=" + UD_DELETE + ';';
+    document.cookie = UD_NAME + '=' + UD_VALUE + ';' + "expires=" + UD_DELETE.toUTCString()  + ';';
 
   }
 
