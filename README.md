@@ -1,4 +1,5 @@
-# VG-DEVMind.github.io
+# Veteran Gaming  
+#### Montagsmaler
 
 **Lobby-Link:**  
     https://vg-devmo.github.io/Lobby/lobby_index.html  
