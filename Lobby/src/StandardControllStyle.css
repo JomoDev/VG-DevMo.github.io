@@ -1,3 +1,9 @@
+html {
+   -ms-user-select: None !important; 
+   -moz-user-select: None !important; 
+   -webkit-user-select: None !important; 
+}
+
 
 /* width */
 ::-webkit-scrollbar {
