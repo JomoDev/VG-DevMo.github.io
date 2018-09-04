@@ -59,11 +59,10 @@ window.onload = function() {
 
     var UD_DATUM = new Date();
     UD_DATUM.setTime(UD_DATUM.getTime() + (UD_DELETE*24*60*60*50));
-    //UD_DATUM.addDays(150);
     
     var UD_DELETE = "expires="+UD_DATUM.toUTCString();
 
-    document.cookie = UD_NAME + '=' + UD_VALUE + ';' + UD_DELETE;
+    document.cookie = UD_NAME + '=' + UD_VALUE + ';' + UD_DELETE + ';';
 
   }
 
