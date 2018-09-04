@@ -1,8 +1,7 @@
-# Veteran Gaming  
-#### Montagsmaler
+# Veteran Gaming  |  Montagsmaler
 
 **Lobby-Link:**  
-    https://vg-devmo.github.io/Lobby/lobby_index.html  
+https://vg-devmo.github.io/Lobby/lobby_index.html  
 **Server-Link:**  
 https://vg-devmo.github.io/Server/server.html  
 **WebApp-Link:**  
