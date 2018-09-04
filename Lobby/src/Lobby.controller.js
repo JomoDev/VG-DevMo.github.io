@@ -60,6 +60,8 @@ window.onload = function() {
     var UD_DATUM = new Date();
     UD_DATUM.setTime(UD_DATUM.getTime() + (UD_DELETE*24*60*60*50));
 
+      var UD_DELETE = UD_DATUM.toUTCString();
+      
      var CookieDate = new Date;
     CookieDate.setFullYear(CookieDate.getFullYear() +1);
       
