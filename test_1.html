@@ -6,7 +6,6 @@
 .alert {
 	font-family: arial;
     padding: 20px;
-    background-color: #f44336;
     color: black;
     background-color: #ffdddd;
     border-left: 6px solid #f44336;
@@ -15,10 +14,18 @@
 .success {
 	font-family: arial;
     padding: 20px;
-    background-color: #42f436;
     color: black;
     background-color: #ddffdd;
     border-left: 6px solid #42f436;
+}
+
+.warning {
+		font-family: arial;
+    padding: 20px;
+    background-color: #f4be36;
+    color: black;
+    background-color:  #fff1dd;
+    border-left: 6px solid #f4be36;
 }
 
 .closebtn {
@@ -37,16 +44,22 @@
 </style>
 </head>
 <body>
-
-<h2>Alert Messages</h2>
-
-<p>Click on the "x" symbol to close the alert message.</p>
 <div class="success">
 
   <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
   <strong>Success!</strong> Indicates a success action.
 </div>
 <div style="height: 20px;"></div>
+
+<div class="warning">
+
+  <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+  <strong>Warning!</strong> Indicates a warning.
+</div>
+
+<div style="height: 20px;"></div>
+
+
 <div class="alert">
 
   <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
