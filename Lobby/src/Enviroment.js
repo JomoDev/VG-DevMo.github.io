@@ -98,7 +98,7 @@ function updateSlider(e) {
 }
 
 function reloadPage() {
-  location.reload();
+  location.reload(true);
 }
 
 $("#openChat").click(function (e) {
