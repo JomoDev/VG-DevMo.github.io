@@ -32,6 +32,8 @@ function loadLanguageFromServer (lang) {
          type: 'GET',
          success: function(output) {
           objString = output.toString();
+           console.log(objString);
+           console.log(output);
          },
         error: function() {
           console.error('failed to load language file ' + lang + ' from path ' + path);
