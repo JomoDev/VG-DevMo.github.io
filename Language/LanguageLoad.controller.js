@@ -34,18 +34,20 @@ function loadLanguageFromServer (lang) {
           objString = output.toString();
            console.log(objString);
            console.log(output);
+
+            console.log(objString);
+
+            var jsonObject = JSON.parse(objString);
+
+            console.log(jsonObject);
+
+            return jsonObject;
          },
         error: function() {
           console.error('failed to load language file ' + lang + ' from path ' + path);
+          return null;
         }
   });
-  
-  console.log(objString);
-  
-  var jsonObject = JSON.parse(objString);
-  
-  console.log(jsonObject);
-  
-  return jsonObject;
+
   
 }
