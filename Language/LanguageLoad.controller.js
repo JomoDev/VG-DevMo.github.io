@@ -33,7 +33,7 @@ function loadLanguageFromServer (lang) {
           objString = output.toString();
          },
         error: function() {
-          console.log("error");
+          console.error('failed to load language file ' + lang + ' from path ' + path);
         }
   });
   
