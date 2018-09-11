@@ -32,14 +32,11 @@ function loadLanguageFromServer (lang) {
   
 xmlhttp.onreadystatechange = function(response) {
     if (this.readyState == 4 && this.status == 200) {
-        var myArr = this.responseText;
-      console.log(JSON.parse(this.response));
-      console.log(this.response);
-      console.log(this.responseText);
-      console.log(response);
-        return myArr;
+        return JSON.parse(this.response);
     } else {
+      if (this.status !== 200) {
        console.error('failed to load language file ' + lang + ' from path ' + path + ' responde-status ' + this.status);
+      }
     }
 };
 xmlhttp.open("GET", path, true);
