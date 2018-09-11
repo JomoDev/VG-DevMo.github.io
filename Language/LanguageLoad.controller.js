@@ -29,8 +29,7 @@ function loadLanguageFromServer (lang) {
   var objString;
   
   var xmlhttp = new XMLHttpRequest();
-var path = "myTutorials.txt";
-
+  
 xmlhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
         var myArr = JSON.parse(this.responseText);
