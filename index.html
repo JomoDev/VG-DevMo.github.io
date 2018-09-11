@@ -60,7 +60,7 @@ transform: translateY(-45%);
 <html>
   <head>
     <meta charset="UTF-8"/>
-    <title>VG-Montagsmaler</title>
+    <title id="_title">loading Webapp</title>
   </head>
   <body>
     <div id="_loader" class="loader"></div>
@@ -68,6 +68,7 @@ transform: translateY(-45%);
       function iframeLoad() {
         $('#_loader').remove();
         $('#_frame').animate({"opacity": "1"}, "slow");
+        document.getElementById('_title').InnerHTML = 'VG-Montagsmaler'; 
       }
     </script>
     <iframe id="_frame" src="WebApp/index.html" style="border: 0; width: 100%; height: 100%; opacity: 0" onload="iframeLoad()">
