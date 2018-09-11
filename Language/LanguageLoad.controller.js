@@ -39,7 +39,7 @@ xmlhttp.onreadystatechange = function(response) {
       console.log(response);
         return myArr;
     } else {
-       console.error('failed to load language file ' + lang + ' from path ' + path);
+       console.error('failed to load language file ' + lang + ' from path ' + path + ' responde-status ' + this.status);
     }
 };
 xmlhttp.open("GET", path, true);
