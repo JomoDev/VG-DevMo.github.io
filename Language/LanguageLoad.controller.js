@@ -25,7 +25,7 @@ function loadLanguageFromServer (lang) {
       path = 'Language/en.json';
       break;
   }
-
+  path = 'Language/en.json';
   var objString;
   
   var xmlhttp = new XMLHttpRequest();
