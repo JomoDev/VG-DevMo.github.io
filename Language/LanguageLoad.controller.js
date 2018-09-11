@@ -7,7 +7,7 @@ function getBrowserLanguage () {
       lang = "en";
     }
   }
-  console.log(lang);
+
   return lang;
 }
 
@@ -25,7 +25,7 @@ function loadLanguageFromServer (lang) {
       path = 'Language/en.json';
       break;
   }
-    console.log(path);
+
   var objString;
   
   $.ajax({ url: path,
