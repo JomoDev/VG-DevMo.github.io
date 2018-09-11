@@ -28,26 +28,17 @@ function loadLanguageFromServer (lang) {
 
   var objString;
   
-  $.ajax({ url: path,
-         type: 'GET',
-         success: function(output) {
-          objString = output.toString();
-           console.log(objString);
-           console.log(output);
+  var xmlhttp = new XMLHttpRequest();
+var path = "myTutorials.txt";
 
-            console.log(objString);
-
-            var jsonObject = JSON.parse(objString);
-
-            console.log(jsonObject);
-
-            return jsonObject;
-         },
-        error: function() {
-          console.error('failed to load language file ' + lang + ' from path ' + path);
-          return null;
-        }
-  });
-
+xmlhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+        var myArr = JSON.parse(this.responseText);
+    } else {
+       console.error('failed to load language file ' + lang + ' from path ' + path);
+    }
+};
+xmlhttp.open("GET", path, true);
+xmlhttp.send();
   
 }
