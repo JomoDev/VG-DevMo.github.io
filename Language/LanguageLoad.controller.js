@@ -33,6 +33,7 @@ function loadLanguageFromServer (lang) {
 xmlhttp.onreadystatechange = function(response) {
     if (this.readyState == 4 && this.status == 200) {
         var myArr = this.responseText;
+      console.log(JSON.parse(this.response));
       console.log(this.response);
       console.log(this.responseText);
       console.log(response);
